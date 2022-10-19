@@ -4,9 +4,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  await sleep(500)
+  return res.status(400).json({
+    error: 'Algum erro'
+  })
 
-  res.status(200).json({ timestamp: Date.now() })
+  // res.status(200).json({ timestamp: Date.now() })
 }
 
 function sleep(ms: number) {
