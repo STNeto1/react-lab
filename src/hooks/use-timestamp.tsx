@@ -8,7 +8,7 @@ export default function useTimestamp() {
   return useQuery<unknown, Error, Data>(
     ['timestamp'],
     async () => {
-      const res = await fetch('/api/timestamp')
+      const res = await fetch('http://localhost:3000/api/timestamp')
 
       if (!res.ok) {
         throw new Error('Failed to fetch timestamp')
@@ -19,7 +19,8 @@ export default function useTimestamp() {
     {
       refetchOnMount: false,
       refetchOnWindowFocus: false,
-      refetchOnReconnect: false
+      refetchOnReconnect: false,
+      suspense: true
     }
   )
 }
