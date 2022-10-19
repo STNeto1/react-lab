@@ -1,17 +1,7 @@
-import { useEffect, useState } from 'react'
+import useTimestamp from '../hooks/use-timestamp'
 
 export default function Timestamp() {
-  const [timestamp, setTimestamp] = useState(0)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    fetch('/api/timestamp')
-      .then((res) => res.json())
-      .then((data) => {
-        setTimestamp(data.timestamp)
-        setLoading(false)
-      })
-  }, [])
+  const { loading, timestamp } = useTimestamp()
 
   if (loading) {
     return <p className="text-2xl">Loading...</p>

@@ -4,7 +4,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  await sleep(1000)
+  await sleep(500)
 
   res.status(200).json({ timestamp: Date.now() })
 }
