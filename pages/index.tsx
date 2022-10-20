@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
-import Timestamp from '../src/components/Timestamp'
+import Sum from '../src/components/Sum'
 
 const Home: NextPage = () => {
   return (
     <main className="container mt-5 flex items-center justify-center h-screen">
-      <Timestamp />
+      <Sum />
     </main>
   )
 }
